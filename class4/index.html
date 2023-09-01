@@ -3,705 +3,322 @@
   <head>
     <title>Mining the Web - Class 4</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="slide.css"/>
+    <link rel="stylesheet" href="../slide.css"/>
   </head>
   <body>
     <textarea id="source">
 
+layout:true
+
+<p class="footer">
+<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Mining the Web</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.datapolitan.com" property="cc:attributionName" rel="cc:attributionURL">Richard Dunks</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative-Commons-License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+</p>
+
+---
+
 class: center, middle
-![img-center-small](../images/pratt_logo.png)
+![img-center-30](../images/pratt_logo.png)
 #Mining the Web
 ###Richard Dunks
 ###Slides are available here: http://www.datapolitan.com/MiningTheWeb/class4/
 
 ---
-
-class:middle,center
-#Day Four 
+class:center,middle
+#Day Four
 
 ---
 
-class:center,middle
-![img-full](http://i.giphy.com/YTbZzCkRQCEJa.gif)
+#Goals for tonight
+--
+
++ Discuss using social media data
+--
+
++ Introduce application programming interfaces (APIs)
+--
+
++ Query social media data using an API call
 
 ---
 
-class:center,middle
-#Goals for Today
+#Try installing Python
++ https://www.continuum.io/downloads
 
 ---
 
 #Presentations
-![img-full](http://i.giphy.com/yGqPv037oR2WQ.gif)
-
----
-
-#Learning
-![img-full](http://i.giphy.com/uiVyyVi4Ij4dy.gif)
-
----
-
-#Fun
-![img-full](http://i.giphy.com/NRoNlf3qsQWNq.gif)
-
----
-
-#Topics for Today
-
----
-
-#Topics for Today
-+ Demonstrate geocoding addresses in OpenRefine
-
----
-
-#Topics for Today
-+ Demonstrate geocoding addresses in OpenRefine
-+ Introduce Python
-
----
-
-#Topics for Today
-+ Demonstrate geocoding addresses in OpenRefine
-+ Introduce Python
-+ Create a project using Twitter data
-
----
-
-#Topics for Today
-+ Demonstrate geocoding addresses in OpenRefine
-+ Introduce Python
-+ Create a project using Twitter data
-+ Demonstrate how to design basemaps
++ Visualization Critique
++ Project ideas
 
 ---
 
 class:center,middle
-#Let's Get Started
+#The trouble with social media
 
 ---
 
 class:center,middle
-#Presentations
+![img](../images/sm1.png)
 
 ---
 
 class:center,middle
-#10 Min Break
-![img-center-sm](https://imgs.xkcd.com/comics/automation.png)
-
-https://xkcd.com/1319/
-
----
-
-#Geocoding Addresses in OpenRefine
-1. Start OpenRefine
-2. Load the file `Lincoln_Square_BID_Business_List.csv`
-
-![img-full](../images/or_gca1.png)
-
----
-
-#NYC Geoclient Address Service
-
-![img-full](../images/or_gca2.png)
-
-https://api.cityofnewyork.us/geoclient/v1/doc#section-1.2.1
-
----
-
-#Data Cleanup
-![img](../images/or_gca2a.png)
-
----
-
-#Data Cleanup
-![img-full](../images/or_gca3.png)
-
----
-
-#Data Cleanup
-![img](../images/or_gca4.png)
-
----
-
-#Data Cleanup
-![img-full](../images/or_gca5.png)
-
----
-
-#Data Cleanup
-![img-full](../images/or_gca5.png)
-
-###Trust me, this will help
-
----
-
-#Data Cleanup
-![img](../images/or_gca6.png)
-
----
-
-#Data Cleanup
-![img-full](../images/or_gca7.png)
-
----
-
-#Data Cleanup
-![img-full](../images/or_gca7a.png)
-
----
-
-#Data Cleanup
-![img-full](../images/or_gca7b.png)
-
----
-
-#Data Cleanup
-![img-center-medium](../images/or_gca7c.png)
-
----
-
-#Data Cleanup
-![img-center-medium](../images/or_gca7c.png)
-
-![img-center-medium](../images/or_gca7d.png)
-
----
-
-#Data Cleanup
-![img-full](../images/or_gca8.png)
-
----
-
-#Data Cleanup
-![img-full](../images/or_gca9.png)
-
----
-
-#Let's Geocode
-![img](../images/or_gca10.png)
-
----
-
-#Let's Geocode
-![img](../images/or_gca11.png)
-
----
-
-#What are the parts of an API call?
-
----
-
-#What are the parts of an API call?
-+ Service endpoint
-
----
-
-#What are the parts of an API call?
-+ Service endpoint
-
-###https://api.cityofnewyork.us/geoclient/v1/address
-
----
-
-#What are the parts of an API call?
-+ Service endpoint
-+ Format (optional in some cases)
-
----
-
-#What are the parts of an API call?
-+ Service endpoint
-+ Format (optional in some cases)
-
-###json
-
----
-
-#What are the parts of an API call?
-+ Service endpoint
-+ Format (optional in some cases)
-+ Query parameters
-
----
-
-#What are the parts of an API call?
-+ Service endpoint
-+ Format (optional in some cases)
-+ Query parameters
-
-###houseNumber
-###address
-###zip or borough
-
----
-
-#What are the parts of an API call?
-+ Service endpoint
-+ Format (optional in some cases)
-+ Query parameters
-+ Authentication
-
----
-
-#What are the parts of an API call?
-+ Service endpoint
-+ Format (optional in some cases)
-+ Query parameters
-+ Authentication
-
-###app_id
-###app_key
-
----
-
-#Remember your API keys?
-![img-center-ml](http://www.best-gif.com/wp-content/uploads/2013/10/funny-gifs-forget-my-keys.gif)
-http://www.best-gif.com/oh-man-i-forgot-my-keys/
-
----
-
-#Creating API Call
-![img-center-ml](../images/or_gca12.png)
+![img](../images/sm2.png)
 
 ---
 
 class:center,middle
-![img-full](../images/yeah.png)
-
----
-
-#Testing API Call
-![img-full](../images/or_gca13.png)
-
----
-
-#Testing API Call
-![img-center-sm](../images/or_gca14.png)
-
----
-
-#Let's Run It
-
----
-
-#Let's Run It
-![img-center-ml](../images/api_res.png)
-
----
-
-#What Happened?
-
----
-
-#What Happened?
-+ Works fine in browser
-
----
-
-#What Happened?
-+ Works fine in browser
-+ Doesn't work in API call through OpenRefine
-
----
-
-#What Happened?
-+ Works fine in browser
-+ Doesn't work in API call through OpenRefine
-+ I don't actually know why this happens (should have some response from service)
-
----
-
-#What Happened?
-+ Works fine in browser
-+ Doesn't work in API call through OpenRefine
-+ I don't actually know why this happens (should have some response from service)
-+ Have to encode the spaces using the `escape()` function
-
----
-
-#What Happened?
-+ Works fine in browser
-+ Doesn't work in API call through OpenRefine
-+ I don't actually know why this happens (should have some response from service)
-+ Have to encode the spaces using the `escape()` function
-+ Format is `escape(value,'url')`
-
----
-
-#What Happened?
-+ Works fine in browser
-+ Doesn't work in API call through OpenRefine
-+ I don't actually know why this happens (should have some response from service)
-+ Have to encode the spaces using the `escape()` function
-+ Format is `escape(value,'url')`
-+ (With a `trim()` thrown in for good measure)
-
----
-
-#Let's Try That Again
-![img-full](../images/or_gca15a.png)
-
----
-
-#Let's Try That Again
-![img-full](../images/or_gca15a.png)
-
-+ The `escape()` function encodes the spaces with '+' (based on the `'url'` parameter)
-
----
-
-#Let's Try That Again
-![img-full](../images/or_gca15a.png)
-
-+ The `escape()` function encodes the spaces with '+' (based on the `'url'` parameter)
-+ The `trim()` function removes the leading and trailing white space
+![img](../images/sm3.png)
 
 ---
 
 class:center,middle
-![img-full](../images/how.png)
-
----
-
-#GREL Functions
-![img-center-smm](../images/grel_docs.png)
-https://github.com/OpenRefine/OpenRefine/wiki/GREL-Functions
-
----
-
-#Parse the Response
-![img](../images/or_gca16.png)
-
----
-
-#Parse the Response
-![img-full](../images/or_gca17.png)
-
----
-
-#Parse the Response
-![img-full](../images/or_gca18.png)
-
----
-
-#The Remainders
-##7 rows that didn't geocode
-![img-full](../images/or_gca19.png)
+![img-center-45](../images/sm4.png)
 
 ---
 
 class:center,middle
-#10 Min Break
-![img](http://imgs.xkcd.com/comics/11th_grade.png)
-
-http://xkcd.com/519/
+![img-full](http://i.giphy.com/13GIgrGdslD9oQ.gif)
+<h1 class="meme">I WANT THE SOCIAL MEDIA!</h1>
 
 ---
 
 class:center,middle
-#Luckily I'm not showing you Perl
+![img-full](../images/sm5.png)
+<h1 class="meme">YOU CAN'T HANDLE THE SOCIAL MEDIA!</h1>
 
 ---
 
 class:center,middle
-![img-full](http://howes-it-going.com/perl_ex4.jpg)
-
-http://howes-it-going.com/perl_mdb.html
+#Let's get some social media data
 
 ---
 
-class:center,middle
-#A Quick Introduction to Python
-![img](http://learn.coleggwent.ac.uk/pluginfile.php/350752/mod_book/chapter/5983/royal%20python.jpg)
+#Introduction to APIs
+--
 
-http://learn.coleggwent.ac.uk/mod/book/view.php?id=198016&chapterid=5983
++ Application Program Interface (API)
+--
 
----
-
-#But first...What is a program?
++ A tool for making a website's data digestible for a computer
 
 ---
 
-#But first...What is a program?
-+ A list of instructions to a computer
+#API Steps
+--
+
++ Make a request
+--
+
++ Get a response
+--
+
+##&nbsp;
+
+![img-full](../images/api1.png)
 
 ---
 
-#But first...What is a program?
-+ A list of instructions to a computer
-+ Computers can do repetitive tasks quickly and efficiently
+#API Request
+--
+
++ Endpoint: http://endpoint.api.com/search?
+--
+
++ Query terms: query=search_term
+--
+
++ Authentication: client_id=123, client_secret=abc
+--
+
+#Put it all together for the request
+--
+
++ http://endpoint.api.com/search?query=search_term&client_id=123&client_secret=abc
 
 ---
 
-#But first...What is a program?
-+ A list of instructions to a computer
-+ Computers can do repetitive tasks quickly and efficiently (unlike humans)
+#API Response
+--
+
+![img-center-90](../images/api2.png)
+--
+
+![img-center-60](../images/api3.png)
+--
+
+###This is JSON (**J**ava**S**cript **O**bject **N**otation)
 
 ---
 
-#But first...What is a program?
-+ A list of instructions to a computer
-+ Computers can do repetitive tasks quickly and efficiently
-+ Instructions are created by humans
+#Foursquare API Request
+![img-center-80](../images/4s_api1.png)
 
 ---
 
-#But first...What is a program?
-+ A list of instructions to a computer
-+ Computers can do repetitive tasks quickly and efficiently
-+ Instructions are created by humans
-+ Instructions must also be in a form a computer understands
+#Foursquare API Request
+![img-center-80](../images/4s_api2.png)
+
+--
+
+###Endpoint
+--
+
++ `https://api.foursquare.com/v2/venues/search?`
 
 ---
 
-#So, what do computers understand?
+#Foursquare API Request
+![img-center-80](../images/4s_api3.png)
+--
+
+###Query Parameters
+--
+
++ `ll=40.7037253789768,-74.0079939173954`
+--
+
++ `radius=100`
+--
+
++ `limit=50`
 
 ---
 
-#So, what do computers understand?
-
-<a href="https://twitter.com/CitiBikeDocks/status/632679418264219649">![img](../images/cb_status1.png)</a>
-
----
-
-#So, what do computers understand?
-
-<a href="https://twitter.com/CitiBikeDocks/status/632679418264219649">![img](../images/cb_status1.png)</a>
-
-###"success" (In case your binary is a little rusty)
+#Foursquare API Request
+![img-center-80](../images/4s_api4.png)
 
 ---
 
-#Programming Languages
+#Foursquare API Request
+![img-center-80](../images/4s_api4.png)
+
+###Authentication
+--
+
++ `client_id=TQTH2POSXDUDYOHKHXM0VKDRCBSSYAFUWMVSWBCI10URJBTR`
+--
+
++ `client_secret=F3TEHU5APOLSMLSJZYZYUV1SOL5V0V2HUS150YXGTXFPINGS`
+--
+
++ `v=20140609`
 
 ---
 
-#Programming Languages
-+ Help us write instructions in human-readable code
+#API Response
+![img](../images/4s_api_resp.png)
 
 ---
 
-#Programming Languages
-+ Help us write instructions in human-readable code
-+ Human-readable code is then translated into machine-readable code
+#Questions?
+![img](../images/Batman-and-Robin-Running_meme.png)
+###https://developer.foursquare.com/docs/venues/search 
 
 ---
 
-class:center,middle
-#This is called "compiling"
-![img](https://imgs.xkcd.com/comics/compiling.png)
-
-https://xkcd.com/303/
-
----
-
-#Why Python?
+#Let's do this
+##https://foursquare.com/developers/apps  
++ Register for an account (if you don’t have one already)
++ Create an application
++ Provide a URL (`http://www.pratt.edu` works just fine)
++ Get your client ID and client secret
 
 ---
 
-#Why Python?
-+ Programming languages vary in structure, syntax, and operation
+#Exercise
+##Get your own Foursquare venues data
++ For a location in NYC 40.729/-73.983
++ Find the 100 nearest Foursquare Venues
++ Clean the data in OpenRefine
++ Import to CartoDB and style
 
 ---
 
-#Why Python?
-+ Programming languages vary in structure, syntax, and operation
-+ Each have their particular strengths and weaknesses
+#Opening API Response directly in OpenRefine
+![img-full](../images/or_api1.png)
 
 ---
 
-#Why Python?
-+ Programming languages vary in structure, syntax, and operation
-+ Each have their particular strengths and weaknesses
-+ Python sits at the sweet spot between ease of use, functionality, and versatility
+#Opening API Response directly in OpenRefine
+![img-full](../images/or_api2.png)
 
 ---
 
-#Why Python?
-+ Programming languages vary in structure, syntax, and operation
-+ Each have their particular strengths and weaknesses
-+ Python sits at the sweet spot between ease of use, functionality, and versatility
-
-![img-center-small](../images/venn.png)
+#Opening API Response directly in OpenRefine
+![img-full](../images/or_api3.png)
 
 ---
 
-class:center,middle
-#But don't take my word for it
-
-###http://lorenabarba.com/blog/why-i-push-for-python/
-
----
-class:center,middle
-#Now...
-![img-center-ml](http://i.giphy.com/oadZJB3hwMFjy.gif)
+#Opening API Response directly in OpenRefine
+![img-full](../images/or_api4.png)
 
 ---
 
-class:center,middle
-#Let's start with some basics
-##Open <a href="https://github.com/datapolitan/MiningTheWeb/blob/gh-pages/class4/Intro_to_Python.ipynb" target="_blank">Intro_to_Python.ipynb</a>
+#Removing Empty Rows
+##Switch to rows
+![img-full](../images/or_api5.png)
 
 ---
 
-class:center,middle
-#Now let's try something more advanced
-##Open <a href="https://github.com/datapolitan/MiningTheWeb/blob/gh-pages/class4/API_example.ipynb" target="_blank">API_example.ipynb</a>
-
-<!-- ---
-
-class:center,middle
-#And let's play with some web scraping
-##Open webscrape_example.ipynb -->
+#Removing Empty Rows
+##Text Facet on Column
+![img-full](../images/or_api6.png)
 
 ---
 
-class:center,middle
-#Lunch
-![img-center-sm](https://imgs.xkcd.com/comics/python.png)
+#Removing Empty Rows
+##Select "blank"
+![img-full](../images/or_api7.png)
 
 ---
 
-class:center,middle
-#Register for a Twitter app
-##https://apps.twitter.com/
+#Removing Empty Rows
+##Remove All Matching Rows
+![img-full](../images/or_api8.png)
 
 ---
 
-class:center,middle
-#Let's get hacking
-##https://dev.twitter.com/overview/documentation
+#Removing Empty Rows
+##Reset Facet
+![img-full](../images/or_api9.png)
+
 
 ---
 
-class:center,middle
-#Wrap-up
+#Let's try some Python
+![img-full](../images/python_dev.jpg)
+
 
 ---
 
-class:center,middle
-#We've covered a lot of material
+#Readings
++ Obe, Regina, and Leo Hsu. PostGIS in action. Manning Publications Co., 2011, Pg 3-8.
 
 ---
 
-#Acquiring Data
+#Assignment 1
++ Using an API, either of an open data portal such as the [NYC Open Data Portal](https://data.cityofnewyork.us/data) or some other open data source, create a visualization of the data in CartoDB. Write a short (2-3 paragraph) description of the data, the API you used to access it, how you styled it, and the resulting visualization. Discuss other data you'd like to use or other techniques of cleaning the data to get your desired result. Submit your API code via the Slack channel in the format "lastname-assignment2.py" if you do your API query in Python or "lastname-assignment2.txt" if you did you query in OpenRefine.
 
 ---
 
-#Acquiring Data
-+ Open data and open data portals
+#Assignment 2
++ Update your project plan for your final project with additional questions, data sources, ideas for visualizing, or other issues/challenges you've discovered.
 
 ---
 
-#Acquiring Data
-+ Open data and open data portals
-+ Manual data scraping
+#Resources 
++ [School of Data: Cleaning Data with OpenRefine](http://schoolofdata.org/handbook/recipes/cleaning-data-with-refine/)
++ [Enipedia OpenRefine Tutorial](http://enipedia.tudelft.nl/wiki/OpenRefine_Tutorial)
 
 ---
 
-#Acquiring Data
-+ Open data and open data portals
-+ Manual data scraping
-+ APIs
+class: center,middle
+#Any Issues? Questions?
 
 ---
-
-#Cleaning Data
-
----
-
-#Cleaning Data
-+ Data formats
-
----
-
-#Cleaning Data
-+ Data formats
-+ OpenRefine
-
----
-
-#Cleaning Data
-+ Data formats
-+ OpenRefine
-+ CartoDB
-
----
-
-#Cleaning Data
-+ Data formats
-+ OpenRefine
-+ CartoDB
-+ SQL
-
----
-
-#Cleaning Data
-+ Data formats
-+ OpenRefine
-+ CartoDB
-+ SQL
-+ Python
-
----
-
-#Analyzing Data
-
----
-
-#Analyzing Data
-+ Statistics
-
----
-
-#Analyzing Data
-+ Statistics
-+ SQL 
-
----
-
-#Visualizing Data
-
----
-
-#Visualizing Data
-+ Principles of design
-
----
-
-#Visualizing Data
-+ Principles of design
-+ HTML/CSS
-
----
-
-#Visualizing Data
-+ Principles of design
-+ HTML/CSS
-+ Maps and projections
-
----
-
-#Visualizing Data
-+ Principles of design
-+ HTML/CSS
-+ Maps and projections
-+ CartoCSS (kinda)
-
----
-
-#Stay in Touch!
-+ email `richard at datapolitan.com`
-+ Twitter [@rdunks1](https://twitter.com/rdunks1) or [@datapolitan](https://twitter.com/datapolitan)
-+ [LinkedIn](http://linkd.in/ZzS5q5)
-
----
-
-class:center,middle
-#Thank you!
-##Course Survey: http://goo.gl/forms/1qc5gpwGTy
+class:center, middle
+#See you next week
 
     </textarea>
     <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
